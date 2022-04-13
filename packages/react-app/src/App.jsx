@@ -29,7 +29,7 @@ import externalContracts from "./contracts/external_contracts";
 // contracts
 import deployedContracts from "./contracts/hardhat_contracts.json";
 import { Transactor, Web3ModalSetup } from "./helpers";
-import { Home, YourPhoenix } from "./views";
+import { Home, YourPhoenix, PoapEvents } from "./views";
 import { useStaticJsonRPC } from "./hooks";
 
 const { ethers } = require("ethers");
@@ -54,6 +54,8 @@ const { ethers } = require("ethers");
 
 /// 📡 What chain are your contracts deployed to?
 const initialNetwork = NETWORKS.kovanOptimism; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet)
+
+const server = "https://phoenixnft2.ue.r.appspot.com";
 
 // 😬 Sorry for all the console logging
 const DEBUG = true;
@@ -287,6 +289,12 @@ function App(props) {
             address={address}
             blockExplorer={blockExplorer}
             contractConfig={contractConfig}
+          />
+        </Route>
+        <Route exact path="/poapEvents">
+          <PoapEvents
+            DEBUG={DEBUG}
+            server={server}
           />
         </Route>
       </Switch>

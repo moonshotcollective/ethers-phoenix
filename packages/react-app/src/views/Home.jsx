@@ -17,7 +17,7 @@ function Home({ DEBUG, readContracts, mainnetProvider, blockExplorer, totalSuppl
         let startIndex = totalSupply - perPage * (page - 1);
         for (let tokenIndex = startIndex; tokenIndex > startIndex - perPage && tokenIndex > 0; tokenIndex--) {
           try {
-            if (DEBUG) console.log("Getting Loogie tokenId: ", tokenIndex);
+            if (DEBUG) console.log("Getting NFT tokenId: ", tokenIndex);
             const tokenURI = await readContracts.Phoenix.tokenURI(tokenIndex);
             if (DEBUG) console.log("tokenURI: ", tokenURI);
 

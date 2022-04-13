@@ -30,7 +30,7 @@ function YourPhoenix({
     const updateYourPhoenix = async () => {
       if (yourBalance > 0) {
         const tokenId = await readContracts.Phoenix.tokenOfOwnerByIndex(address, 0);
-        if (DEBUG) console.log("Getting Loogie tokenId: ", tokenId);
+        if (DEBUG) console.log("Getting NFT tokenId: ", tokenId);
         const tokenURI = await readContracts.Phoenix.tokenURI(tokenId);
         if (DEBUG) console.log("tokenURI: ", tokenURI);
 
